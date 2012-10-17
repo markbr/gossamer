@@ -1,0 +1,290 @@
+body {
+	width:100%;
+	background-color:#efece8;
+	font-family:"Lucida Console",Times,serif;
+	color:#fff;
+ 	font-size: 14px;
+}
+
+#all {
+visibility:hidden;
+
+}
+#shadow {
+	width:900px;
+	margin:0 auto;
+	-moz-box-shadow: 0px 0px 100px #000;
+	-webkit-box-shadow: 0px 0px 100px #000;
+	box-shadow: 0px 0px 80px #000;
+}
+
+#gossamer1_hype_container {
+	visibility:visible;
+	margin:0 auto;
+	margin-top:50px;
+	margin-bottom:50px;
+	height:500px;
+	-moz-box-shadow: 0px 0px 100px #000;
+	-webkit-box-shadow: 0px 0px 100px #000;
+	box-shadow: 0px 0px 100px #000;
+}
+
+#header {
+	width:900px;;
+	height:85px;
+	background-color:#1F0772;
+	color:#efece8;
+	margin:0 auto;
+	padding-top:15px;
+	vQisibility:hidden;
+	margin-top:50px;
+	
+}
+
+img.center { 
+    display: block;  
+    margin-right: auto;
+}
+
+#container {
+	width:900px;
+	margin: 0 auto;
+ 	background: #3714B0;
+	margin-top:0px;
+	margin-bottom:0px;
+	min-height:500px; /* for modern browsers */
+	height:auto !important; /* for modern browsers */
+	height:500px; /* for IE5.x and IE6 */
+	border-style:solid;
+	border-width: 1px;
+	border-color:#efece8;
+	border-left:1px;
+	border-right:1px;
+}
+
+#global{
+	margin-top:-20px;
+	margin-bottom:5px;
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	margin-bottom:-2px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+	background:#1F0772;
+}
+
+#delay{
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+    margin-top:-1px;
+
+}
+
+#reverb{
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	margin-top:-1px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+}
+
+
+#grit { 
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	margin-bottom:2px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+    padding-top:8px;
+    padding-bottom:9px;
+    	margin-top:-1px;
+
+}
+
+#filters { 
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+    margin-top:-1px;
+}
+
+
+#footer { 
+	width:900px;
+	height:85px;
+	background-color:#1F0772;
+	Qbackground-color:#434343;
+	margin-top:0px;
+	margin:0 auto;
+}
+
+
+#two { 
+ 	background: #3714B0;
+ 	padding: 10px;
+ 	qheight: 800px;
+ 	width: 260px;
+ 	float: left;
+	Qpadding-right:50px;
+	padding: 20px;
+}
+
+#one { 
+ 	
+ 	background: #3714B0;
+ 	margin: 0px 0px 0px 0px;
+ 	padding: 10px;
+ 	width: 260px;
+ 	float: left;
+	padding: 20px;
+}
+#three { 
+ 	color: #efece8;
+ 	background: #3714B0;
+ 	margin: 0px 0px 0px 0px;
+ 	padding: 10px;
+ 	width: 260px;
+ 	float: left;
+	padding: 20px;
+}
+#four { 
+ 	color: #efece8;
+ 	background: #1d2729;
+ 	margin: 0px 0px 0px 0px;
+ 	padding: 10px;
+ 	width: 260px;
+ 	float: right;
+	padding: 20px;
+}
+
+.preset  { 	
+	position:relative;
+	top:185px;
+	float: left;	
+	color:#efece8;
+	font-family: sans-serif; 
+	padding: 3px;
+	
+}
+
+.select { 
+    opacity : 1;
+    width: 150px;
+    height: 20px;
+    background: #3714B0;
+    border: 2px white;
+    color: #efece8;
+    padding: 0px;
+	font-family: 'Lucida Console';
+}
+
+.adsr{
+	font-size: 16px;
+	}
+	
+	
+#adsr{
+	border-style:solid;
+	border-width: 2px;
+	border-color:#FFD200;
+	padding: 5px;
+	margin-top:-3px;
+	-webkit-border-radius:15px;
+    -moz-border-radius:5px;
+	background: #1F0772;
+}
+
+#wave2  { 	
+	position:relative;
+	top:10px;
+	float: right;	
+	color:#70bad3;
+	font-family: sans-serif; 
+	padding: 3px;
+	visibility: hidden;
+	}
+
+
+input[type="range"] {
+    -webkit-appearance:none !important;
+    border: 2px solid #efece8;
+    margin: 0px 0px 2px 1px;
+    pointer:cursor;
+    width:185px;
+    background-color:#a68800;
+    -webkit-border-radius:15px;
+    -moz-border-radius:5px;
+    background-repeat: no-repeat;
+    	padding: 0px;
+
+}​
+
+.Message{
+	background-color: #70bad3;
+	top:295px;
+	float: right;	
+	color:#efece8;
+}
+	
+.box { 
+	background-color: #040809; 
+	qheight: 90px; 
+	qwidth: 270px; 
+	padding: 5px; 
+	display:none; 
+	color:#efece8;
+
+}
+
+input.groovybutton
+{
+   font-size:14px;
+   font-family:Lucida Console,monospace;
+   color:#FFD200;
+   background-color:#1F0772;
+}
+
+p { 
+	position: relative; 
+	bottom: 14px;
+}
+
+#boxInfo{
+	color:#efece8;
+}
+
+.logo{
+	margin-left:12px;
+}
+
+#q{
+	float:right;
+	margin-right:12px;
+	margin-top:10px;
+	}
+
+#select_control{
+	float:left;
+	margin-left:12px;
+	margin-top:10px;
+}
+.check{
+	visibility:hidden;
+	}
+	
+.envpic{
+	margin-bottom:2px;
+}

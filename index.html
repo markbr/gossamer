@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<title>Gossamer MIDI</title>
+  	<meta name="description" content="">
+  	<meta name="viewport" content="user-scalable=yes, width=1000" />
+	
+	<script type="text/javascript" src="js/audiolib.js"></script>
+	<!--script type="text/javascript" src="js/music.js"></script-->
+
+    <script type="text/javascript" src="js/note.js"></script>
+    <script type="text/javascript" src="js/note-musicTheory.js"></script>
+    <script type="text/javascript" src="js/keyboard.js"></script>
+    
+    <script type="text/javascript" src="lib/midibridge-0.5.1.min.js"></script>
+    <script type="text/javascript" src="lib/MidiBridge.js"></script> 
+        
+    <script type="text/javascript" src="js/gossamer.js"></script>
+   	<script type="text/javascript" src="js/onmouseover.js"></script>
+       	
+    <link rel="stylesheet" media="screen" href="css/reset.css"/>
+    <!--link rel="stylesheet" media="screen" href="css/gossamer.css"/-->
+    
+    <link href="css/gossamer.css" rel="stylesheet" type="text/css" title="main" media="screen" />
+	<link href="css/alt1.css" rel="alternate stylesheet" type="text/css" title="alt1" media="screen" />
+	<link href="css/mono.css" rel="alternate stylesheet" type="text/css" title="mono" media="screen" />
+
+        	
+	<link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+</head>
+<body>
+
+<!-- Begin splash -->
+<div id="splash">
+<div id="gossamer1_hype_container" style="position:relative;overflow:hidden;width:900px;height:685px;">
+		<script type="text/javascript" charset="utf-8" src="gossamer_1_Resources/gossamer1_hype_generated_script.js?25306"></script>
+	</div>
+</div>
+
+<!-- End splash -->
+
+<div id="all"><!-- Begin make all visible after splash -->
+<div id="shadow"><!-- shadow -->
+
+
+  
+  <div id="header">
+		<img src="pics/newGoss.png" class="logo" alt="GOSSAMER" /> <p align="right">Lightweight JavaScript Synthesiser using audioLib.js&nbsp;&nbsp;&nbsp;<br/><br/> </p>
+  </div>
+	
+	
+  <div id="container">  
+
+	<!-- Begin Left Column -->
+		 <div id="one">
+		 	
+			<div id="wave2">		
+	 			<!--img class ='img' src="pics/waveShape21.png" alt="Wave Shape" />
+					<select id = "waveform2">
+					<option value="square">square</option>
+					<option value="invSawtooth">inverted sawtooth</option>
+					<option value="pulse">pulse</option>
+					<option value="sawtooth">sawtooth</option-->
+					<!--option value="triangle">triangle</option-->
+					
+			<!--/select-->
+			</div>	
+			<br/><br/><br/><br/>
+			<div id="global"><br/>
+		<div id="wave">		
+	 			<img src="pics/osc.png" alt="Wave Shape" onmouseover="oscInfo()" onmouseout="blankInfo()"/>
+				<select class='select' id = "waveform" >
+					<option value="invSawtooth">Inverted sawtooth</option>
+					<option value="square">Square</option>
+					<option value="pulse">Pulse</option>
+					<option value="sawtooth">Sawtooth</option>
+					<!--option value="triangle">Triangle</option-->
+					<!--option value="sine">Sine</option-->				
+				</select>
+			</div>	
+		
+		<br/>
+			<div id="preset">
+  			<img src="pics/preset.png" alt="Preset" onmouseover="presetInfo()" onmouseout="blankInfo()"/>
+   		 	<select class='select' id = "presetSelect" onchange = "presetsM()">
+				<option value="default">Custom</option>    
+				<option value="dnb">DnB</option>		
+				<option value="Distorted">Distorted</option>
+				<option value="messy">Messy</option>
+			</select>
+			</div>
+				<br/>
+			<div id="lfo">   
+    			<img src="pics/lfo1.png" alt="Preset" onmouseover="lfoInfo()" onmouseout="blankInfo()"/> <input type="range" name="lfo" id="lfospeed" min="0" max="10" value="0"  onchange="onFxChangeM()">
+			</div>
+				<br/>
+			<div id="volume">   
+    			<img src="pics/vol1.png" alt="volume" onmouseover="volumeInfo()" onmouseout="blankInfo()"/> <input type="range" name="vol" id="vol" min="0" max="10" step="0.2" value="2"  onchange="onFxChangeMVOl()">
+			</div>
+			<br/>
+			</div><!--global div-->
+			
+			<br/>
+			<img src="pics/env.png" alt="volEnv" class ="envpic" />
+		 	<div id="adsr">	
+		 	<br/>
+ 				<img src="pics/a.png" alt="attack" onmouseover="attackInfo()" onmouseout="blankInfo()"/>&nbsp;<input type="range" name="attack" id="attackTime" min="1" max="1000" value="50" onchange="onEnvelopeChange()" ><!--span id="envelopeLabel1"></span-->
+  				<br /><br/> 
+  				<img src="pics/d.png" alt="decay" onmouseover="decayInfo()" onmouseout="blankInfo()"/> <input type="range" name="decay" id="decayTime" min="1" max="500" value="50" onchange="onEnvelopeChange()"><!--span id="envelopeLabel2"></span-->
+   	 			<br /><br/> 
+    			<img src="pics/s.png" alt="sustain" onmouseover="sustainInfo()" onmouseout="blankInfo()"/> <input type="range" name="sustainTime" id="sustainTime" min="0" max="1" value="0" step="0.1" onchange="onEnvelopeChange()"><!--span id="envelopeLabel3"></span-->
+    			<br /><br/> 
+    			<img src="pics/r.png" alt="release" onmouseover="releaseInfo()" onmouseout="blankInfo()"/> <input type="range" name="releaseTime" id="releaseTime" min="1" max="1000" value="50" onchange="onEnvelopeChange()"><!--span id="envelopeLabel4"></span-->
+			<br/><br/> 
+			</div>
+		
+			<!--div id="chorus"> 
+    			Delay <input type="range" name="chdelay" id="chdelay" min="0.0" max="900" value="0.0"  onchange="chorusDelayTime()">
+    			<br />
+    			Depth <input type="range" name="depth" id="depth" min="0" max="8" value="0"  onchange="chorusDepth()">
+    			<br />
+    			LFO <input type="range" name="freq" id="freq" min="0" max="900" value="0"  onchange="chorusFreq()">
+    			<br />
+			</div-->
+			
+			
+			
+			
+		 </div> <!-- End one Column -->
+		 
+		 
+		 
+		 <!-- Begin Left Middle Column -->
+		 <div id="two">
+		       
+		<div id ="dist">
+			<br/><img src="pics/dist.png" alt="Distortion" onmouseover="distortionInfo()" onmouseout="blankInfo()"/>
+			<div id="grit">	
+			<br/>
+			<div id="distgain"> 
+			<br/>
+    			<img src="pics/gain.png" alt="Master" onmouseover="gainInfo()" onmouseout="blankInfo()"/><input type="range" name="gain" id="gain" min="0" max="20" value="4"  onchange="distGain()">
+			</div><br/> 
+			<div id="distmaster">   
+    			<img src="pics/master.png" alt="Master" onmouseover="masterInfo()" onmouseout="blankInfo()"/><input type="range" name="master" id="master" min="0" max="6" value="1"  onchange="distMaster()">
+			</div><br/> 
+			<div id="bitcrush">   
+    			<img src="pics/crush.png" alt="BitCrush" onmouseover="crushInfo()" onmouseout="blankInfo()"/><input type="range" name="crush" id="crush" min="1" max="8" value="8"  onchange="bitCrush()">
+			</div><br/><br/>
+			
+			</div><br/><br/> <br/> <br/> <br/> 
+		 </div>
+				<!--div id="content">	
+					</div--><!-- gossamer loaded -->
+					
+					<div id="Message" class="box"> This is a monophonic synth. To play with a MIDI keyboard, connect it and refresh the page. Otherwise please select QWERTY to play via the computer keyboard.</div>
+				<br/>
+					<div id="boxInfo"></div>
+         </div>
+		 <!-- End two Column -->
+		 
+		 <div id="three"><!-- End two Column -->
+		 <br/>
+		<img src="pics/delay.png" alt="Delay" onmouseover="delayInfo()" onmouseout="blankInfo()"/>
+	<div id="delay">
+			<div id="delaytime">
+			<br/>
+    			<img src="pics/time.png" alt="time" onmouseover="timeInfo()" onmouseout="blankInfo()"/><input type="range" name="dtime" id="dtime" min="0" max="700" value="0"  onchange="changeDelayTime()">
+			</div>
+			<br/> 
+			<div id="delayfeedback">   
+    			<img src="pics/feed.png" alt="feed" onmouseover="feedInfo()" onmouseout="blankInfo()"/><input type="range" name="dfeed" id="dfeed" min="0" max="5" value="0" step="0.2"  onchange="changeDelayFeedback()">
+			</div>
+			<br/>
+		</div>	
+		<br/>
+		<img src="pics/filter.png" alt="Filters" onmouseover="filterInfo()" onmouseout="blankInfo()"/>
+		<div id="filters">	
+			<div id="lpCut"> <br/>  
+    			<img src="pics/lp.png" alt="lp" onmouseover="lpInfo()" onmouseout="blankInfo()"/><input type="range" name="lp" id="lp" min="10" max="5000" value="5000" step="1"  onchange="lpCutOff()">
+			</div>
+			<br/> 
+			<div id="hpCut">   
+    			<img src="pics/hp.png" alt="hp" onmouseover="hpInfo()" onmouseout="blankInfo()"/><input type="range" name="hp" id="hp" min="10" max="10000" value="10" step="1"  onchange="hpCutOff()">
+			</div>
+			<br/>
+		</div>
+		<br/> 
+		<img src="pics/reverb.png" alt="Reverb" onmouseover="reverbInfo()" onmouseout="blankInfo()"/>
+		  <div id="reverb">	
+			<div id="dryness">  <br/> 
+    			<img src="pics/dry.png" alt="Dry" onmouseover="dryInfo()" onmouseout="blankInfo()"/><input type="range" name="dry" id="dry" min="0.1" max="10" step="0.1" value="5"  onchange="reverbDry()">
+			</div>
+			<br/> 
+			<div id="wetness">   
+    			<img src="pics/wet.png" alt="wet" onmouseover="wetInfo()" onmouseout="blankInfo()"/><input type="range" name="wet" id="wet" min="0" max="10" step="0.1" value="5.5"  onchange="reverbWet()">
+			</div>
+			<br/>
+			<!--div id="roomsize">   
+    			Size<input type="range" name="size" id="size" min="0" max="10" step="0.1" value="1"  onchange="reverbSize()">
+			</div>
+			
+			<div id="damping">   
+    			Damp<input type="range" name="damp" id="damp" min="0" max="10" step="0.1" value="1"  onchange="reverbDamp()">
+			</div-->
+			</div>
+		  
+		  
+		  
+		  
+		  
+		  </div><!-- End three Column -->
+	
+	
+	
+	
+	
+	
+<script>
+	//toggleEnvelope();
+    onFxChangeM();
+    onFxChangeMVOl();
+	//onEnvelopeChange()
+</script>
+
+
+
+
+
+</div><!-- container end -->
+
+<div id="footer">
+		<div id="select_control">
+				<form name="groovyform">
+				<input
+			   	type="button"
+				name="groovybtn1"
+  				class="groovybutton"
+   				value="QWERTY"
+   				onmouseover="buttonQInfo()"
+   				onclick="window.location='qwerty.html'" 
+   				title="">
+				</form>
+			</div>
+	 
+				 <span id="q"
+				onmouseover="allInfo()" 
+				onmouseout="blankInfo()" > 
+				<img src="pics/ques.png" alt="Help"> 
+				</span>
+			
+		
+
+
+</div>
+
+</div><!-- shadow -->
+
+</div><!-- END make all visible after splash --> 
+<br/><br/>
+</body>
+</html>
